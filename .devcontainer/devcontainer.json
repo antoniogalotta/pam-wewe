@@ -1,0 +1,19 @@
+{
+    "name": "PAM WeWe Dev Container",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cmake-tools",
+                "EditorConfig.EditorConfig",
+                "twxs.cmake"
+            ]
+        }
+    },
+    "remoteUser": "root",
+    "postCreateCommand": "make"
+}

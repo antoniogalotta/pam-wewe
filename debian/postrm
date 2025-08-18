@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# Remove wewe from the PAM configuration
+if [ -f /etc/pam.d/gdm-password ]; then
+    sed -i -e '/auth sufficient pam_wewe.so/d' /etc/pam.d/gdm-password
+fi
+
+exit 0

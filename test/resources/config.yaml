@@ -1,0 +1,21 @@
+users:
+- username: test
+  pin_hash: $argon2id$v=19$m=19456,t=2,p=1$5wsSTJK0/CL03/eXED707Q$eOKG0yBSs0zXaLilSkdcuI54yuRrJ3Zyft4Asm5LMak
+  networks:
+  - name: home
+    gateway: 00:aa:0a:a0:21:12
+  trusted_network_check: true
+- username: test2
+  pin_hash: $argon2id$v=19$m=19456,t=2,p=1$5wsSTJK0/CL03/eXED707Q$eOKG0yBSs0zXaLilSkdcuI54yuRrJ3Zyft4Asm5LMak
+  networks:
+  - name: home
+    gateway: 00:aa:0a:a0:21:12
+  trusted_network_check: false
+- username: test3
+  pin_hash: $argon2id$v=19$m=19456,t=2,p=1$5wsSTJK0/CL03/eXED707Q$eOKG0yBSs0zXaLilSkdcuI54yuRrJ3Zyft4Asm5LMak
+  networks: []
+  trusted_network_check: true
+- username: test4
+  pin_hash: $argon2id$v=19$m=19456,t=2,p=1$5wsSTJK0/CL03/eXED707Q$eOKG0yBSs0zXaLilSkdcuI54yuRrJ3Zyft4Asm5LMak
+  networks: []
+  trusted_network_check: false

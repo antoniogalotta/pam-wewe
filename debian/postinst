@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+# Create wewe directory if it doesn't exist
+mkdir -p /etc/wewe
+
+# Create config file if it doesn't exist
+if [ ! -f /etc/wewe/config.yaml ]; then
+    touch /etc/wewe/config.yaml
+    # Set permissions
+    chown root:root /etc/wewe/config.yaml
+    chmod 600 /etc/wewe/config.yaml
+fi
+
+# Add wewe to the PAM configuration
+if [ -f /etc/pam.d/gdm-password ]; then
+    if ! grep -q "pam_wewe.so" /etc/pam.d/gdm-password; then
+        sed -i -e '1i auth sufficient pam_wewe.so' /etc/pam.d/gdm-password
+    fi
+fi
+
+exit 0

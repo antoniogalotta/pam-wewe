@@ -1,0 +1,20 @@
+# Ignore build artifacts.
+# The 'build' directory is generated inside the container, so we don't need to copy it from the host.
+build/
+target/
+
+docker/
+
+# Ignore Git repository files.
+.git
+.gitignore
+
+# Ignore GitHub Actions workflow file, not needed for the Docker build.
+build.yml
+
+# Ignore documentation files.
+/*.md
+
+# Ignore this file itself from the build context.
+.dockerignore
+sonar-project.properties

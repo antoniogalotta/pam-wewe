@@ -1,0 +1,16 @@
+Source: pam-wewe
+Section: utils
+Priority: optional
+Maintainer: Antonio Galotta <antoniog.galotta@gmail.com>
+Build-Depends: debhelper (>= 13), libpam-dev, libyaml-dev, libargon2-dev, libcyaml-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/antoniogalotta/pam-wewe
+Package: pam-wewe
+Architecture: any
+Version: 1.0
+Depends: libargon2-1, libcyaml1
+Description: PAM module for local PIN authentication.
+ This PAM module allows users to authenticate using a locally stored PIN.
+ PIN authentication can be restricted to trusted networks by verifying the MAC address of the default gateway.
+ The module configuration is managed via the `/etc/wewe/config.yaml` file.
+ Users can further configure their PIN and manage their personal list of trusted networks using the `wewe-ctl` command-line utility.

@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose debhelper output.
+export DH_VERBOSE = 1
+
+# This is the debhelper compatibility version.
+export DH_COMPAT = 13
+
+# This is the main build target.
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE)
+
+override_dh_auto_install:
+	dh_auto_install
+	# Install the PAM module
+	install -m 0755 -d $(DEB_INSTALL_ROOT)/lib/security
+	install -m 0755 build/pam_wewe.so $(DEB_INSTALL_ROOT)/lib/security/pam_wewe.so
+
+override_dh_auto_clean:
+	dh_auto_clean
